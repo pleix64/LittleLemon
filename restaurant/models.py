@@ -7,7 +7,7 @@ class MenuItem(models.Model):
     inventory = models.PositiveSmallIntegerField()
     
     def __str__(self) -> str:
-        return self.title
+        return f'{self.title} : {str(self.price)}'
     
 
 class Booking(models.Model):
