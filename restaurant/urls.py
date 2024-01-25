@@ -1,6 +1,6 @@
 from django.urls import path, include
 from . import views
-
+from rest_framework.authtoken.views import obtain_auth_token
 from rest_framework import routers
 from restaurant import views
 
@@ -12,4 +12,5 @@ urlpatterns = [
     path('menu', views.MenuItemListView.as_view()),
     path('menu/<int:pk>', views.MenuItemDetailView.as_view()),
     path('booking/', include(router.urls)),
+    path('api-token-auth/', obtain_auth_token),
 ]
